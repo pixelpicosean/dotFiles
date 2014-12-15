@@ -2,24 +2,23 @@
 
 ## Dependences
 
-brew
+### brew
 `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"`
-install from brew:
+
+Install from brew:
 - bash
 - python
 
-python (from brew)
-`brew install python`
-install from python(using `pip install ${anything_you_want}`):
+Install from python (using `pip install ${anything_you_want}`):
 - Pygments
 
-nvm
-`curl https://raw.github.com/creationix/nvm/master/install.sh | sh`
-install from nvm
+### Node.js
 
-npm (from nvm)
-install from npm:
-bower, http-server, puer
+Install nvm:
+`curl https://raw.github.com/creationix/nvm/master/install.sh | sh`
+
+Install from npm:
+bower, http-server, puer, js-beautify, gulp, pandatool, pipeable-js
 
 ## File list
 

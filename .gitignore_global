@@ -1,2 +1,5 @@
 *~
 .DS_Store
+player.autosave.scml
+*.sublime-project
+*.sublime-workspace

@@ -90,5 +90,3 @@ export NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Swift
-#export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"

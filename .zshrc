@@ -1,3 +1,7 @@
+###########################################################
+# ZSH Config
+###########################################################
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/sean/.oh-my-zsh
 
@@ -5,55 +9,27 @@ export ZSH=/Users/sean/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+# ZSH_THEME="agnoster"
 ZSH_THEME="robbyrussell"
 # ZSH_THEME="ys"
 
-# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
+export UPDATE_ZSH_DAYS=7
 # DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true" # Will run much faster for large repos
+# HIST_STAMPS="mm/dd/yyyy" # "mm/dd/yyyy" or "dd.mm.yyyy" or "yyyy-mm-dd"
+plugins=(osx brew git zsh-autosuggestions)
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+###########################################################
+# General
+###########################################################
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
-
-# User configuration
-
+# Export brew path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -62,31 +38,39 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='mvim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+###########################################################
+# Functions
+###########################################################
+
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
+###########################################################
+# Development
+###########################################################
 
+# NVM for Node.js
 source ~/.nvm/nvm.sh
-export AMOK_CLIENT='"Google\ Chrome" --remote-debugging-port=9222'
 
 # Android SDK/NDK
-export ANDROID_HOME=/Users/sean/Workspace/playground/fips-sdks/osx/android-sdk-macosx
-
-export ANDROID_NDK=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
-export NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
-
+export ANDROID_HOME=/Users/sean/Workspace/playground/fips-sdks/osx/android-sdk
+export ANDROID_NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk
+# export ANDROID_NDK=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
+# export NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# emscripten
+export PATH="/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable:/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/emscripten/incoming:$PATH"
+export EMSCRIPTEN_ROOT="/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/emscripten/incoming"
+
+export GRADLE_HOME=/Users/sean/Workspace/playground/fips-sdks/osx/gradle-2.2
+export PATH="$GRADLE_HOME/bin:$EMSCRIPTEN:$ANDROID_HOME/tools:$ANDROID_NDK:$PATH"
+
+# Enable oh-my-zsh
+source $ZSH/oh-my-zsh.sh

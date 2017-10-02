@@ -59,18 +59,10 @@ alias fs="stat -f \"%z bytes\""
 source ~/.nvm/nvm.sh
 
 # Android SDK/NDK
-export ANDROID_HOME=/Users/sean/Workspace/playground/fips-sdks/osx/android-sdk
-export ANDROID_NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk
-# export ANDROID_NDK=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
-# export NDK_ROOT=/Users/sean/Workspace/playground/fips-sdks/osx/android-ndk-r9d
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# emscripten
-export PATH="/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable:/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/emscripten/incoming:$PATH"
-export EMSCRIPTEN_ROOT="/Users/sean/Workspace/playground/fips-sdks/osx/emsdk-portable/emscripten/incoming"
-
-export GRADLE_HOME=/Users/sean/Workspace/playground/fips-sdks/osx/gradle-2.2
-export PATH="$GRADLE_HOME/bin:$EMSCRIPTEN:$ANDROID_HOME/tools:$ANDROID_NDK:$PATH"
+# Python 2.7 (brew)
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh

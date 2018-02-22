@@ -22,7 +22,7 @@ export UPDATE_ZSH_DAYS=7
 # COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true" # Will run much faster for large repos
 # HIST_STAMPS="mm/dd/yyyy" # "mm/dd/yyyy" or "dd.mm.yyyy" or "yyyy-mm-dd"
-plugins=(osx brew git zsh-autosuggestions)
+plugins=(osx git zsh-autosuggestions)
 
 ###########################################################
 # General
@@ -55,6 +55,9 @@ alias fs="stat -f \"%z bytes\""
 # Development
 ###########################################################
 
+# Emscripten
+# export PATH="/Users/sean/x/fips-sdks/osx/emsdk-portable:/Users/sean/x/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/Users/sean/x/fips-sdks/osx/emsdk-portable/node/4.1.1_64bit/bin:/Users/sean/x/fips-sdks/osx/emsdk-portable/emscripten/incoming:$PATH"
+
 # NVM for Node.js
 source ~/.nvm/nvm.sh
 
@@ -64,5 +67,13 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Python 2.7 (brew)
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# .Net
+export PATH="/usr/local/share/dotnet:$PATH"
+
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/sean/.nvm/versions/node/v8.6.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/sean/.nvm/versions/node/v8.6.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+export PATH="$HOME/.yarn/bin:$PATH"

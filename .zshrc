@@ -3,33 +3,25 @@
 ###########################################################
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/sean/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="agnoster"
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="ys"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_MODE='nerdfont-complete'
+source ~/Workspace/my_tools/powerlevel9k/powerlevel9k.zsh-theme
 
-# CASE_SENSITIVE="true"
-# DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=7
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
-# COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true" # Will run much faster for large repos
-# HIST_STAMPS="mm/dd/yyyy" # "mm/dd/yyyy" or "dd.mm.yyyy" or "yyyy-mm-dd"
 plugins=(osx git zsh-autosuggestions)
+
 
 ###########################################################
 # General
 ###########################################################
 
 # Export brew path
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -38,11 +30,12 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
 
 ###########################################################
 # Functions
@@ -51,29 +44,32 @@ fi
 # File size
 alias fs="stat -f \"%z bytes\""
 
+
 ###########################################################
 # Development
 ###########################################################
-
-# Emscripten
-# export PATH="/Users/sean/x/fips-sdks/osx/emsdk-portable:/Users/sean/x/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/Users/sean/x/fips-sdks/osx/emsdk-portable/node/4.1.1_64bit/bin:/Users/sean/x/fips-sdks/osx/emsdk-portable/emscripten/incoming:$PATH"
 
 # NVM for Node.js
 source ~/.nvm/nvm.sh
 
 # Android SDK/NDK
 export JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME="$HOME/Workspace/android/android-sdk"
+export ANDROID_SDK_ROOT="$HOME/Workspace/android/android-sdk"
+export PATH="$HOME/Workspace/android/android-sdk/platform-tools:$HOME/Workspace/android/android-sdk/tools:$PATH"
 
-# Python 2.7 (brew)
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Emscripten
+# export PATH="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/emscripten/incoming:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/node/8.9.1_64bit/bin:$PATH"
+# export EMSDK="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable"
+# export EM_CONFIG="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/.emscripten"
+# export EM_CACHE="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/.emscripten_cache"
 
-# .Net
-export PATH="/usr/local/share/dotnet:$PATH"
+# Flutter
+export PATH="$HOME/Workspace/Frameworks/flutter/bin:$PATH"
+export ENABLE_FLUTTER_DESKTOP=true
+
+# git-subrepo
+source $HOME/Workspace/open_source/apps/git-subrepo/.rc
 
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /Users/sean/.nvm/versions/node/v8.6.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/sean/.nvm/versions/node/v8.6.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
-export PATH="$HOME/.yarn/bin:$PATH"

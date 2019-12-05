@@ -13,7 +13,13 @@ source ~/Workspace/my_tools/powerlevel9k/powerlevel9k.zsh-theme
 
 export UPDATE_ZSH_DAYS=7
 DISABLE_UNTRACKED_FILES_DIRTY="true" # Will run much faster for large repos
-plugins=(osx git zsh-autosuggestions)
+plugins=(
+  osx
+  git
+  history-substring-search
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 
 ###########################################################
@@ -48,6 +54,9 @@ alias fs="stat -f \"%z bytes\""
 ###########################################################
 # Development
 ###########################################################
+
+# Python
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # NVM for Node.js
 source ~/.nvm/nvm.sh

@@ -67,18 +67,16 @@ export ANDROID_HOME="$HOME/Workspace/android/android-sdk"
 export ANDROID_SDK_ROOT="$HOME/Workspace/android/android-sdk"
 export PATH="$HOME/Workspace/android/android-sdk/platform-tools:$HOME/Workspace/android/android-sdk/tools:$PATH"
 
-# Emscripten
-# export PATH="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/clang/fastcomp/build_incoming_64/bin:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/emscripten/incoming:$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/node/8.9.1_64bit/bin:$PATH"
-# export EMSDK="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable"
-# export EM_CONFIG="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/.emscripten"
-# export EM_CACHE="$HOME/Workspace/cc/fips-sdks/osx/emsdk-portable/.emscripten_cache"
-
 # Flutter
 export PATH="$HOME/Workspace/Frameworks/flutter/bin:$PATH"
 export ENABLE_FLUTTER_DESKTOP=true
 
 # git-subrepo
 source $HOME/Workspace/open_source/apps/git-subrepo/.rc
+
+# Godot
+export CPP_BINDINGS="$HOME/Workspace/godot/repo/cpp"
+export GODOT_HEADERS="$HOME/Workspace/godot/repo/cpp/godot_headers"
 
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh

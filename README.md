@@ -1,9 +1,14 @@
-# Dot files for OSX
+# Dot files
 
-## Dependences
+## Dependencies (macOS)
 
 - [brew](http://brew.sh/)
 - [nvm](https://github.com/creationix/nvm)
+
+## Dependencies (Windows)
+
+- [Git for Windows]
+- [Alacritty]
 
 ## Vim setup
 
